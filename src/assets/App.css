@@ -1,0 +1,116 @@
+:root {
+  --background: #0a0a0a;
+  --background-secondary: #000;
+  --background-modal: #729fcf;
+  --background-focus: #444c;
+  --color: #fffd;
+  --color-secondary: #fff6;
+  --color-modal: #fff;
+  --color-focus: #fff;
+
+  --timer-width: 14em;
+  --padding-topsides: 1em;
+  --padding-sides: 1ch;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  color: var(--color);
+}
+body {
+  background: var(--background-secondary);
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+input, button {
+  background: var(--background-modal);
+  color: var(--color-secondary);
+  border: none;
+  padding: var(--padding-topsides) var(--padding-sides);
+}
+input[type=datetime-local] {
+  padding: var(--padding-topsides) 0;
+  min-width: var(--timer-width);
+  text-align: center;
+}
+body, input, button {
+  font-family:
+    "Cascadia Code PL",
+    "Cascadia Mono PL",
+    "Ubuntu Mono",
+    "DejaVu Sans Mono",
+    "Courier New",
+    monospace;
+  font-size: 25px;
+}
+input:focus {
+  outline: none;
+  background: var(--background-focus);
+  color: var(--color-focus);
+}
+button {
+  margin: 0;
+  border: 0;
+  background: none;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+input[type=text] {
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex > * {
+  flex-grow: 1;
+}
+.flex.equal > * {
+  flex-basis: 0;
+}
+.flex > .fix-width,
+.title.time {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.filters a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+}
+a:before {
+  content: "[ ";
+}
+a:after {
+  content: " ]";
+}
+.todo.empty {
+  padding: var(--padding-topsides) 0;
+}
+.title, .pagination > div {
+  padding: var(--padding-topsides) 0;
+}
+.title.selected, a.selected {
+  text-decoration: underline;
+}
+.selected.asc:after {
+  content: " (asc)";
+}
+.selected.desc:after {
+  content: " (desc)";
+}
